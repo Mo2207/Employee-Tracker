@@ -32,7 +32,6 @@ function addRole() {
       }
     ])
     .then((data) => {
-      console.log(data)
       db.query(`
       INSERT INTO roles (role_title, salary, department_id)
       VALUES (

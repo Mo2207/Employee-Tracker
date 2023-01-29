@@ -3,16 +3,17 @@ const inquirer = require('inquirer');
 const { db, startApplication } = require('../app');
 
 const employeesArray = [];
-db.query('SELECT employee_first_name, employee_last_name from employees', function(err, result) {
+db.query('SELECT employee_first_name, employee_last_name FROM employees', function(err, result) {
   if (!err) {
     result.forEach(item => employeesArray.push(`${item.employee_first_name} ${item.employee_last_name}`))
   } else {
     console.log(err);
   }
+  employeesArray.push('NONE');
 })
 
 const rolesArray = [];
-db.query('SELECT role_title from roles', function(err, result) {
+db.query('SELECT role_title FROM roles', function(err, result) {
   if (!err) {
     result.forEach(item => rolesArray.push(item.role_title))
   } else {
@@ -47,7 +48,6 @@ function addEmployee() {
       }
     ])
     .then((data) => {
-      console.log(data)
       db.query(`
       INSERT INTO employees (employee_first_name, employee_last_name, role_title, employee_manager)
       VALUES (

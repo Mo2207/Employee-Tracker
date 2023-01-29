@@ -12,7 +12,6 @@ function addDepartment() {
       }
     ])
     .then((data) => {
-      console.log(data)
       db.query(`
       INSERT INTO departments (department_name)
       VALUES ('${(data.department_name).toUpperCase()}')`,
