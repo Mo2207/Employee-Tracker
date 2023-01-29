@@ -18,7 +18,7 @@ function addDepartment() {
       VALUES ('${(data.department_name).toUpperCase()}')`,
       function (err, result) {
         if (!err) {
-          console.table(result)
+          console.log('Department added!')
         } else {
           console.log(err)
         }

@@ -12,14 +12,15 @@ CREATE TABLE departments (
 CREATE TABLE roles (
   role_id INT PRIMARY KEY AUTO_INCREMENT,
   role_title VARCHAR(30) NOT NULL,
-  salary DECIMAL, 
-  department_id INT
+  salary DECIMAL NOT NULL, 
+  department_id INT,
+  FOREIGN KEY(department_id) REFERENCES departments(department_id) 
 );
 
 CREATE TABLE employees (
   employee_id INT PRIMARY KEY AUTO_INCREMENT,
   employee_first_name VARCHAR(30) NOT NULL,
   employee_last_name VARCHAR(30) NOT NULL,
-  role_id INT,
-  manager_id INT
+  role_title VARCHAR(30) NOT NULL,
+  employee_manager VARCHAR(30)
 );
