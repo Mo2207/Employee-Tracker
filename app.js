@@ -36,7 +36,7 @@ function startApplication() {
           })
           break;
         case ('view roles table'):
-          db.query('SELECT roles.role_id, roles.role_title, departments.department_name, roles.salary FROM roles LEFT JOIN departments ON roles.department_id = departments.department_id', function(err, result) {
+          db.query('SELECT roles.role_id, roles.role_title, departments.department_name, roles.salary FROM roles LEFT JOIN departments ON roles.department_name = departments.department_name', function(err, result) {
             if (!err) {
               console.table(result)
             } else {
@@ -46,7 +46,7 @@ function startApplication() {
           })
           break;
         case ('view employees table'):
-          db.query('SELECT employees.employee_first_name, employees.employee_last_name, employees.role_title, departments.department_name, roles.salary, employees.employee_manager FROM employees JOIN roles ON employees.role_title = roles.role_title JOIN departments ON roles.department_id = departments.department_id', 
+          db.query('SELECT employees.employee_first_name, employees.employee_last_name, employees.role_title, departments.department_name, roles.salary, employees.employee_manager FROM employees JOIN roles ON employees.role_title = roles.role_title JOIN departments ON roles.department_name = departments.department_name', 
           function(err, result) {
             if (!err) {
               console.table(result)

@@ -3,9 +3,9 @@ const inquirer = require('inquirer');
 const { db, startApplication } = require('../app');
 
 const departmentsArray = [];
-db.query('SELECT department_id from departments', function(err, result) {
+db.query('SELECT department_name from departments', function(err, result) {
   if (!err) {
-    result.forEach(item => departmentsArray.push(item.department_id))
+    result.forEach(item => departmentsArray.push(item.department_name))
   } else {
     console.log(err);
   }
@@ -26,18 +26,18 @@ function addRole() {
       },
       {
         type: 'list',
-        name: 'department_id',
+        name: 'department_name',
         messsage: 'Enter the department this role belongs to.',
         choices: departmentsArray
       }
     ])
     .then((data) => {
       db.query(`
-      INSERT INTO roles (role_title, salary, department_id)
+      INSERT INTO roles (role_title, salary, department_name)
       VALUES (
         '${(data.role_title).toUpperCase()}',
         '${data.salary}',
-        '${data.department_id}'
+        '${data.department_name}'
       )`,
       function (err, result) {
         if (!err) {
