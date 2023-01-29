@@ -2,9 +2,9 @@
 
 ## Description:
 
-This application uses input from the user via command-line/terminal prompts using inquirer and 
-  - I built this project to practise using node and inquirer, and to familiarize myself with breaking down a project into seperate folders/files based on function.
-  - Making this project I learned how to use jest for testing and touble-shooting my code.
+This application uses input from the user via command-line/terminal prompts using inquirer to track and add employee data.
+  - I built this project to practise using sql databases and to access data from them locally.
+  - Making this project I learned how to use joins for combining multiple table columns.
   
 ## Installation:
 This project can be cloned into your project.
@@ -13,7 +13,7 @@ This project can be cloned into your project.
 
 A tutorial demonstration for this application can be viewed here: 
 
-!["inquirer prompts"](./images/inquirer-prompts.png)
+!["inquirer prompts"](./images/employee-tracker-prompts.png)
 
 This project can be used by running 'node app.js' in the command-line or terminal. Then answer all prompts using the arrow/enter keys.
 
