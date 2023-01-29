@@ -11,7 +11,7 @@ This project can be cloned into your project.
 
 ## Usage:
 
-A tutorial demonstration for this application can be viewed here: 
+A tutorial demonstration for this application can be viewed here: https://youtu.be/G8ySKoR8nV4
 
 !["inquirer prompts"](./images/employee-tracker-prompts.png)
 
